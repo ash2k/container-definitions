@@ -36,11 +36,9 @@ toolchain_container(
     installation_cleanup_commands = "rm -f /etc/init.d/.depend.boot /etc/init.d/.depend.start /etc/init.d/.depend.stop",
     language_layers = [
         "@layer_definitions//layers/ubuntu1604/clang:clang-ltl",
-        "@layer_definitions//layers/ubuntu1604/java:java-ltl",
-        "@layer_definitions//layers/ubuntu1604/java:java11-ltl",
+        # Python is still needed https://github.com/bazelbuild/rules_docker/issues/1555
         "@layer_definitions//layers/ubuntu1604/python:python-ltl",
         "@layer_definitions//layers/ubuntu1604/bazel:bazel-ltl",
-        "@layer_definitions//layers/ubuntu1604/docker:docker-ltl",
     ],
 )
 
